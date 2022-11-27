@@ -7,14 +7,19 @@ public class Main {
     public static void main(String[] args) {
         Queue<Person> queueOfVisitors = new LinkedList<>(generateClients());
         String t = " - прокатился на атракционе";
+        int counter = 1;
         while (!queueOfVisitors.isEmpty()) {
             Person client = queueOfVisitors.poll();
             if (client.numberOfTickets > 0) {
-                System.out.println(client.surname + " " + client.name + t);
+                System.out.println(counter + ". " + client.surname + " " + client.name + t);
+                counter++;
                 client.setNumberOfTickets(client.numberOfTickets - 1);
                 if (client.numberOfTickets != 0) {
                     queueOfVisitors.add(client);
                 }
+            } else {
+                System.out.println(client.surname + " " + client.name +
+                        " - Не некорректное колличество билетов ");
             }
         }
     }
