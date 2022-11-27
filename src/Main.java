@@ -19,7 +19,7 @@ public class Main {
                 }
             } else {
                 System.out.println(client.surname + " " + client.name +
-                        " - Не некорректное колличество билетов ");
+                        " - Не корректное колличество билетов ");
             }
         }
     }
